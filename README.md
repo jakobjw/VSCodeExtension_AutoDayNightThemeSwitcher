@@ -30,4 +30,5 @@ Auto Day Night Theme Switcher with auto toggle feature
 ## Credits
 
 Day Night Theme Switcher by Rakhim Davletkaliyev (https://github.com/freetonik/vscode-dnts).
+
 Night and day by Aaron K. Kim from the Noun Project.

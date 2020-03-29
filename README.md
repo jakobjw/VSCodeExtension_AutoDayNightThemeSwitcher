@@ -1,6 +1,6 @@
-# Day Night Theme Switcher
+# Auto Day Night Theme Switcher
 
-Define daytime and nighttime themes and quickly switch between them from the command palette.
+Automatically switch between day and night color themes based on given times.
 
 ## Features
 
@@ -12,29 +12,22 @@ A darker, calmer color theme is better for your eyes during the night. But it's 
 
 This extension contributes the following settings:
 
-* `dayNightThemeSwitcher.dayTheme`: day theme (default is "Visual Studio Light")
-* `dayNightThemeSwitcher.nightTheme`: night theme (default is "Visual Studio Dark")
-* `dayNightThemeSwitcher.dayThemeCustomizations`: day theme color customizations (default is `{}`)
-* `dayNightThemeSwitcher.nightThemeCustomizations`: night theme color customizations (default is `{}`)
+* `autoDayNightThemeSwitcher.autoToggle`: If enabled, toggle to day and night theme automatically given the times (default is `true`)
+* `autoDayNightThemeSwitcher.autoToggleTimeNightBegin`: Time when the automatic toggle to the night theme shall be done (if auto-toggle enabled, default is `19:00`)
+* `autoDayNightThemeSwitcher.autoToggleTimeNightEnd`: Time when the automatic toggle to the day theme shall be done (if auto-toggle enabled, default is `7:00`)
+* `autoDayNightThemeSwitcher.dayTheme`: Day theme (default is `Visual Studio Light`)
+* `autoDayNightThemeSwitcher.nightTheme`: Night theme (default is `Visual Studio Dark`)
+* `autoDayNightThemeSwitcher.dayThemeCustomizations`: Day theme color customizations (default is `{}`)
+* `autoDayNightThemeSwitcher.nightThemeCustomizations`: Night theme color customizations (default is `{}`)
+* `autoDayNightThemeSwitcher.toggleDefaultNight`: If neither day or night theme are the current theme and toggle is triggered, switch to night theme (default is `true`)
 
 ## Release Notes
 
-### 0.0.4
+### 0.2.0
 
-Made toggle switch to day or night theme even when neither is the current theme
-
-### 0.0.3
-
-Added a keybinding to toggle theme (`ctrl+alt+t` on Windows and Linux, `cmd+alt+t` on macOS).
-
-### 0.0.2
-
-Added color customizations to settings.
-
-### 0.0.1
-
-Define themes in the user settings file, switch between them from the command palette.
+Auto Day Night Theme Switcher with auto toggle feature
 
 ## Credits
 
+Day Night Theme Switcher by Rakhim Davletkaliyev (https://github.com/freetonik/vscode-dnts).
 Night and day by Aaron K. Kim from the Noun Project.

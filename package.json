@@ -1,11 +1,11 @@
 {
-    "name": "day-night-theme-switcher",
-    "displayName": "Day Night Theme Switcher",
-    "description": "Quickly switch between day and night themes for your eyes' sake.",
-    "version": "0.1.2",
-    "publisher": "freetonik",
+    "name": "auto-day-night-theme-switcher",
+    "displayName": "Auto Day Night Theme Switcher",
+    "description": "Automatically switch between day and night color themes based on given times.",
+    "version": "0.2.0",
+    "publisher": "jakobjw",
     "author": {
-        "name": "Rakhim Davletkaliyev"
+        "name": "Rakhim Davletkaliyev, jakobjw"
     },
     "icon": "images/icon.png",
     "galleryBanner": {
@@ -14,7 +14,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/freetonik/vscode-dnts"
+        "url": "https://github.com/jakobjw/vscode-dnts"
     },
     "engines": {
         "vscode": "^1.16.0"
@@ -30,61 +30,74 @@
     ],
     "license": "SEE LICENSE IN LICENSE",
     "activationEvents": [
-        "onCommand:dayNightThemeSwitcher.switchToNightTheme",
-        "onCommand:dayNightThemeSwitcher.switchToDayTheme",
-        "onCommand:dayNightThemeSwitcher.toggleDayNightTheme"
+        "*"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [
             {
-                "command": "dayNightThemeSwitcher.switchToNightTheme",
+                "command": "autoDayNightThemeSwitcher.switchToNightTheme",
                 "title": "Night Theme"
             },
             {
-                "command": "dayNightThemeSwitcher.switchToDayTheme",
+                "command": "autoDayNightThemeSwitcher.switchToDayTheme",
                 "title": "Day Theme"
             },
             {
-                "command": "dayNightThemeSwitcher.toggleDayNightTheme",
+                "command": "autoDayNightThemeSwitcher.toggleDayNightTheme",
                 "title": "Toggle Day/Night Theme"
             }
         ],
         "keybindings": [
             {
-                "command": "dayNightThemeSwitcher.toggleDayNightTheme",
+                "command": "autoDayNightThemeSwitcher.toggleDayNightTheme",
                 "key": "ctrl+alt+t",
                 "mac": "cmd+alt+t"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "Theme scheduler configuration",
+            "title": "Auto Day Night Theme Switcher",
             "properties": {
-                "dayNightThemeSwitcher.nightTheme": {
+                "autoDayNightThemeSwitcher.autoToggle": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "If enabled, toggle to day and night theme automatically given the times"
+                },
+                "autoDayNightThemeSwitcher.autoToggleTimeNightBegin": {
                     "type": "string",
-                    "default": "Visual Studio Dark",
-                    "description": "The night theme"
+                    "default": "19:00",
+                    "description": "Time when the automatic toggle to the night theme shall be done (if auto-toggle enabled)"
                 },
-                "dayNightThemeSwitcher.nightThemeCustomizations": {
-                    "type": "object",
-                    "default": {},
-                    "description": "The night theme color customizations"
+                "autoDayNightThemeSwitcher.autoToggleTimeNightEnd": {
+                    "type": "string",
+                    "default": "7:00",
+                    "description": "Time when the automatic toggle to the day theme shall be done (if auto-toggle enabled)"
                 },
-                "dayNightThemeSwitcher.dayTheme": {
+                "autoDayNightThemeSwitcher.dayTheme": {
                     "type": "string",
                     "default": "Visual Studio Light",
                     "description": "The day theme"
                 },
-                "dayNightThemeSwitcher.dayThemeCustomizations": {
+                "autoDayNightThemeSwitcher.dayThemeCustomizations": {
                     "type": "object",
                     "default": {},
                     "description": "The day theme color customizations"
                 },
-                "dayNightThemeSwitcher.toggleDefaultDark": {
+                "autoDayNightThemeSwitcher.nightTheme": {
+                    "type": "string",
+                    "default": "Visual Studio Dark",
+                    "description": "The night theme"
+                },
+                "autoDayNightThemeSwitcher.nightThemeCustomizations": {
+                    "type": "object",
+                    "default": {},
+                    "description": "The night theme color customizations"
+                },
+                "autoDayNightThemeSwitcher.toggleDefaultNight": {
                     "type": "boolean",
                     "default": true,
-                    "description": "If neither day or night theme are the current theme and toggle is triggered, switch to dark theme"
+                    "description": "If neither day or night theme are the current theme and toggle is triggered, switch to night theme"
                 }
             }
         }
